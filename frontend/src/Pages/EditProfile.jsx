@@ -37,7 +37,7 @@ const EditProfile = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        fetch('https://backend-knm3.onrender.com/editprofile', {
+        fetch('https://e-commerce-artr.onrender.com/editprofile', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

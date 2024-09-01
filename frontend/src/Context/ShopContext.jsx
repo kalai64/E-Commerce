@@ -18,12 +18,12 @@ const ShopContextProvider = (props)=>{
     const [cartItems,setCartItems] = useState(getDefaultCart())
     
     useEffect(()=>{
-        fetch('https://backend-knm3.onrender.com/allproducts')
+        fetch('https://e-commerce-artr.onrender.com/allproducts')
         .then((response)=>response.json())
         .then((data)=>setAll_Product(data))
 
         if(localStorage.getItem('auth-token')){
-            fetch('https://backend-knm3.onrender.com/getcart',{
+            fetch('https://e-commerce-artr.onrender.com/getcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -42,7 +42,7 @@ const ShopContextProvider = (props)=>{
 
     const addToCart = (itemId) => {
         if (localStorage.getItem('auth-token')) {
-            fetch('https://backend-knm3.onrender.com/addtocart', {
+            fetch('https://e-commerce-artr.onrender.com/addtocart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -72,7 +72,7 @@ const ShopContextProvider = (props)=>{
     
     const removeFromCart = (itemId) => {
         if (localStorage.getItem('auth-token')) {
-            fetch('https://backend-knm3.onrender.com/removefromcart', {
+            fetch('https://e-commerce-artr.onrender.com/removefromcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -102,7 +102,7 @@ const ShopContextProvider = (props)=>{
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     
        
-        fetch('https://backend-knm3.onrender.com/addtocart', {
+        fetch('https://e-commerce-artr.onrender.com/addtocart', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -126,7 +126,7 @@ const ShopContextProvider = (props)=>{
             setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     
             
-            fetch('https://backend-knm3.onrender.com/removefromcart', {
+            fetch('https://e-commerce-artr.onrender.com/removefromcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
